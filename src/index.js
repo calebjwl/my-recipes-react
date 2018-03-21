@@ -1,17 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import App from './components/App';
 import RecipeGrid from './components/RecipeGrid';
+import Single from './components/Single';
 
 const router = (
-  <BrowserRouter>
+  <Router>
     <div>
-      <Route exact path="/" component={App}></Route>
-      <Route exact path="/" component={RecipeGrid}></Route>
+      <Route path="/" component={App}></Route>
+      <Route path="/view/:id" component={Single}></Route>
+      {/* <Route exact path="/" component={RecipeGrid}></Route> */}
     </div>
-  </BrowserRouter>
+  </Router>
 );
 
 ReactDOM.render(router, document.getElementById('root'));
