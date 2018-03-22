@@ -1,9 +1,8 @@
 import { createStore, compose } from 'redux';
 import { syncHistoryWithStore } from 'react-router-redux';
+
 import browserHistory from './history';
-
 import rootReducer from './reducers/index';
-
 import sampleRecipes from './sample-recipes';
 
 const defaultState = [...sampleRecipes];
