@@ -10,8 +10,8 @@ const router = (
   <Router>
     <div>
       <Route path="/" component={App}></Route>
-      <Route path="/view/:id" component={Single}></Route>
-      {/* <Route exact path="/" component={RecipeGrid}></Route> */}
+      <Route path="/view/:code" component={Single}></Route>
+      <Route exact path="/" component={RecipeGrid}></Route>
     </div>
   </Router>
 );

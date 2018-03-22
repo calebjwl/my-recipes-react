@@ -1,10 +1,22 @@
 import React, { Component } from 'react';
 import Recipe from './Recipe';
 
+import sampleRecipes from '../sample-recipes';
+
 class RecipeGrid extends Component {
-  // constructor() {
-  //   super();
-  //   this.renderRecipes = this.renderRecipes.bind(this);
+  constructor() {
+    super();
+    // this.loadSamples = this.loadSamples.bind(this);
+
+    this.state = {
+      recipes: [...sampleRecipes]
+    }
+  }
+
+  // loadSamples() {
+  //   this.setState({
+  //     recipes: [...sampleRecipes]
+  //   });
   // }
 
   render() {
@@ -12,8 +24,8 @@ class RecipeGrid extends Component {
       <div>
         <h1>Grid</h1>
         <div className="grid">
-          {this.props.recipes.map((recipe, index) => 
-            <Recipe {...recipe} key={index}/>
+          {this.state.recipes.map((recipe, index) => 
+            <Recipe {...recipe} key={index} index={index}/>
           )}
         </div>
       </div>

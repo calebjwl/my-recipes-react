@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Recipe extends Component {
   render() {
     const recipe = this.props;
     return (
       <div className="recipe">
-        <img src={recipe.image} alt={recipe.name}/>
+        <Link to={`/view/${recipe.code}`}>
+          <img src={recipe.image} alt={recipe.name}/>
+        </Link>
         <p>{recipe.name}</p>
-        <p>{recipe.image}</p>
         <p>{recipe.ingredients}</p>
         <p>{recipe.directions}</p>
-        <p>{recipe.cookTime}</p>
-        <p>{recipe.servings}</p>
+        <p>Cook time: {recipe.cookTime}</p>
+        <p>Servings: {recipe.servings}</p>
       </div>
     );
   }
