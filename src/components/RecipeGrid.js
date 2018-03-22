@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Recipe from './Recipe';
+// import Recipe from './Recipe';
 
 // import sampleRecipes from '../sample-recipes';
 
@@ -24,9 +24,9 @@ class RecipeGrid extends Component {
       <div>
         <h1>Grid</h1>
         <div className="grid">
-          {this.state.recipes.map((recipe, index) => 
+          {/* {this.state.recipes.map((recipe, index) => 
             <Recipe {...recipe} key={index} index={index}/>
-          )}
+          )} */}
         </div>
       </div>
     );
