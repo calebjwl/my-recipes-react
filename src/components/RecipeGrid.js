@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import Recipe from './Recipe';
 
-import sampleRecipes from '../sample-recipes';
+// import sampleRecipes from '../sample-recipes';
 
 class RecipeGrid extends Component {
-  constructor() {
-    super();
-    // this.loadSamples = this.loadSamples.bind(this);
+  // constructor() {
+  //   super();
+  //   this.loadSamples = this.loadSamples.bind(this);
 
-    this.state = {
-      recipes: [...sampleRecipes]
-    }
-  }
+  //   this.state = {
+  //     recipes: [...sampleRecipes]
+  //   }
+  // }
 
   // loadSamples() {
   //   this.setState({

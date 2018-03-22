@@ -1,24 +1,20 @@
-// import { createStore, compose } from 'redux';
-// import { syncHistoryWithStore } from 'react-router-redux';
-// import { browserHistory } from 'react-router';
+import { createStore, compose } from 'redux';
+import { syncHistoryWithStore } from 'react-router-redux';
+import browserHistory from './history';
 
-// import rootReducer from './reducers/index';
+import rootReducer from './reducers/index';
 
-// import comments from './data/comments';
-// import posts from './data/posts';
+import sampleRecipes from './sample-recipes';
 
-// const defaultState = {
-//   posts,
-//   comments
-// };
+const defaultState = [...sampleRecipes];
 
-// const enhancers = compose(
-//   window.devToolsExtension ? window.devToolsExtension() : f => f
-// );
+const enhancers = compose(
+  window.devToolsExtension ? window.devToolsExtension() : f => f
+);
 
-// const store = createStore(rootReducer, defaultState, enhancers);
+const store = createStore(rootReducer, defaultState, enhancers);
 
-// export const history = syncHistoryWithStore(browserHistory, store);
+export const history = syncHistoryWithStore(browserHistory, store);
 
 // if (module.hot) {
 //   module.hot.accept('./reducers/', () => {
@@ -27,4 +23,4 @@
 //   });
 // }
 
-// export default store;
+export default store;
