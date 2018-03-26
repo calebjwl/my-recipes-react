@@ -6,9 +6,8 @@ import Header from './Header';
 class Main extends Component {
   render() {
     return (
-      <div className="Main">
-        <Header />
-        {/* {React.cloneElement(this.props.children, this.props)} */}
+      <div>
+        <Header/>
       </div>
     );
   }

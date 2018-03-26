@@ -1,19 +1,17 @@
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import * as actionCreators from '../actions/actionCreator';
-import Main from './Main';
+import React from 'react';
 
-function mapStateToProps(state) {
-  return {
-    recipes: state.recipes,
+import Header from './Header';
+import RecipeGrid from './RecipeGrid';
+
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <Header/>
+        <RecipeGrid/>
+      </div>
+    )
   }
 }
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(actionCreators, dispatch);
-}
-
-const App = connect(mapStateToProps, mapDispatchToProps)(Main);
-// const App = connect(mapStateToProps)(Main);
 
 export default App;

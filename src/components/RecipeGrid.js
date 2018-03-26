@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
-// import Recipe from './Recipe';
+import { Link } from 'react-router-dom';
 
-// import sampleRecipes from '../sample-recipes';
+import Recipe from './Recipe';
+
+import sampleRecipes from '../sample-recipes';
 
 class RecipeGrid extends Component {
-  // constructor() {
-  //   super();
-  //   this.loadSamples = this.loadSamples.bind(this);
+  constructor() {
+    super();
+    // this.loadSamples = this.loadSamples.bind(this);
 
-  //   this.state = {
-  //     recipes: [...sampleRecipes]
-  //   }
-  // }
+    this.state = {
+      recipes: [...sampleRecipes]
+    }
+  }
 
   // loadSamples() {
   //   this.setState({
@@ -24,9 +26,12 @@ class RecipeGrid extends Component {
       <div>
         <h1>Grid</h1>
         <div className="grid">
-          {/* {this.state.recipes.map((recipe, index) => 
-            <Recipe {...recipe} key={index} index={index}/>
-          )} */}
+          {this.state.recipes.map((recipe, i) => 
+            // <Recipe {...recipe} key={recipe.id}/>
+            <Link to={`/recipe/${recipe.id}`}>
+              <p key={i}>{recipe.name}</p>
+            </Link>
+          )}
         </div>
       </div>
     );

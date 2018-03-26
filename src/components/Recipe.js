@@ -6,7 +6,7 @@ class Recipe extends Component {
     const recipe = this.props;
     return (
       <div className="recipe">
-        <Link to={`/view/${recipe.code}`}>
+        <Link to={`/recipe/${recipe.id}`}>
           <img src={recipe.image} alt={recipe.name}/>
         </Link>
         <p>{recipe.name}</p>

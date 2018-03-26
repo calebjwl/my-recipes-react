@@ -1,7 +1,7 @@
 const recipes = [
   {
     code: 'honey-garlic',
-    id: 1,
+    id: 0,
     name: 'Honey Garlic Salmon',
     image: 'https://www.recipetineats.com/wp-content/uploads/2015/03/Honey-Garlic-Salmon-1.jpg',
     ingredients: 'Sauce: \n- 4 tbsp honey\n- 2 tbsp soy sauce (all purpose or light soy sauce)\n- 1 tbsp white vinegar (or sub with any other vinegar except balsamic)\n- 1 large garlic clove (or 2 small) minced\n\nSalmon:\n- 2 salmon or trout fillets, skinless (6oz / 200g each)\n- Olive oil\n-  Salt and pepper\n-  Optional Garnishes\n-  Sesame seeds\n-  Finely sliced chives or shallots/scallions',
@@ -11,7 +11,7 @@ const recipes = [
   },
   {
     code: 'avocado-toast',
-    id: 2,
+    id: 1,
     name: 'Avocado Toast',
     image: 'https://truffle-assets.imgix.net/9f7fc1b6-101-avocadotoast-dishland1.jpg',
     ingredients: '1 slice whole wheat bread \n 1 avocado \n 2 tsp cream cheese \n salt and pepper to taste \n red pepper flakes to taste \n 1 egg (optional)',
