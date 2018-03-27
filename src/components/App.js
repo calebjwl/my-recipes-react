@@ -1,14 +1,14 @@
 import React from 'react';
 
 import Header from './Header';
-import RecipeGrid from './RecipeGrid';
+import Main from './Main';
 
 class App extends React.Component {
   render() {
     return (
       <div>
         <Header/>
-        <RecipeGrid/>
+        <Main/>
       </div>
     )
   }

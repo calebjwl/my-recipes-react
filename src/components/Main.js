@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
-import '../style/App.scss';
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 
-import Header from './Header';
+import RecipeGrid from './RecipeGrid';
+import Recipe from './Recipe';
 
-class Main extends Component {
-  render() {
-    return (
-      <div>
-        <Header/>
-      </div>
-    );
-  }
-}
+const Main = () => (
+  <Switch>
+    <Route exact path='/' component={RecipeGrid}/>
+    <Route path='/recipe/:id' component={Recipe}/>
+  </Switch>
+);
 
 export default Main;
