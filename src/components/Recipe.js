@@ -17,7 +17,7 @@ class Recipe extends Component {
     return (
       <div className="recipe">
         <Link to={`/recipe/${recipe.code}`}>
-          <img src={recipe.image} alt={recipe.name}/>
+          <img src={recipe.image} alt={recipe.name} className="recipe__image"/>
         </Link>
         <p>{recipe.name}</p>
         <p>{recipe.ingredients}</p>

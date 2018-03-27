@@ -3,9 +3,9 @@ import { syncHistoryWithStore } from 'react-router-redux';
 
 import browserHistory from './history';
 import rootReducer from './reducers/index';
-import sampleRecipes from './sample-recipes';
+import RecipeAPI from './api';
 
-const defaultState = { recipes: [...sampleRecipes]};
+const defaultState = { recipes: [...RecipeAPI.all()]};
 
 const enhancers = compose(
   window.devToolsExtension ? window.devToolsExtension() : f => f
