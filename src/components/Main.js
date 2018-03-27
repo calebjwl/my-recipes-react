@@ -7,7 +7,7 @@ import Recipe from './Recipe';
 const Main = () => (
   <Switch>
     <Route exact path='/' component={RecipeGrid}/>
-    <Route path='/recipe/:id' component={Recipe}/>
+    <Route path='/recipe/:code' component={Recipe}/>
   </Switch>
 );
 

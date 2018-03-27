@@ -22,8 +22,8 @@ const RecipeAPI = {
     }
   ],
   all: function() { return this.recipes },
-  get: function(i) {
-    const isRecipe = r => r.id === i;
+  get: function(code) {
+    const isRecipe = r => r.code === code;
     return this.recipes.find(isRecipe);
   }
 };

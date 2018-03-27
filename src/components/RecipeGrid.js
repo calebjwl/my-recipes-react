@@ -19,8 +19,8 @@ class RecipeGrid extends Component {
         <div className="grid">
           {this.state.recipes.map((recipe) => 
             // <Recipe {...recipe} key={recipe.id}/>
-            <Link to={`/recipe/${recipe.id}`} key={recipe.id}>
-              <p >{recipe.name}</p>
+            <Link to={`/recipe/${recipe.code}`} key={recipe.id}>
+              <p>{recipe.name}</p>
             </Link>
           )}
         </div>

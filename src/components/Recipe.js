@@ -10,13 +10,13 @@ class Recipe extends Component {
   }
 
   render() {
-    const recipe = RecipeAPI.get(parseInt(this.props.match.params.id, 10));
+    const recipe = RecipeAPI.get(this.props.match.params.code);
     if (!recipe) {
       return <div>Sorry, but the recipe was not found.</div>;
     }
     return (
       <div className="recipe">
-        <Link to={`/recipe/${recipe.id}`}>
+        <Link to={`/recipe/${recipe.code}`}>
           <img src={recipe.image} alt={recipe.name}/>
         </Link>
         <p>{recipe.name}</p>
