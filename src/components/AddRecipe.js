@@ -16,19 +16,19 @@ class AddRecipe extends Component {
           </div>
           <div className="control">
             <label className="label">Ingredients</label>
-            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <textarea cols="30" rows="10"></textarea>
           </div>
           <div className="control">
             <label className="label">Directions</label>
-            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <textarea cols="30" rows="10"></textarea>
           </div>
           <div className="control">
             <label className="label">Cook Time</label>
-            <input type="text"/>
+            <input type="number"/>
           </div>
           <div className="control">
             <label className="label">Numer of Servings</label>
-            <input type="text"/>
+            <input type="number"/>
           </div>
           <input type="submit" className="submit" value="submit"/>
         </form>
