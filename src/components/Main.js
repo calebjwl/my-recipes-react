@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import '../style/App.scss';
 
 import RecipeGrid from './RecipeGrid';
 import Recipe from './Recipe';
