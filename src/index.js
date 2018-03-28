@@ -1,19 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import store from './store';
 
 import Header from './components/Header';
-import Main from './components/Main';
+import App from './components/App';
 
 const router = (
   <Provider store={store}>
     <BrowserRouter>
       <div>
         <Header/>
-        <Main/>
+        <Route path="/" component={App}></Route>
       </div>
     </BrowserRouter>
   </Provider>

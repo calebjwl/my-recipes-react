@@ -15,7 +15,7 @@ class Main extends Component {
         <Route path='/add-recipe' component={AddRecipe}/>
       </Switch>
     )
-  };
-}
+  }
+};
 
 export default Main;
