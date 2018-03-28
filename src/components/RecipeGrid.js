@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import store from '../store';
 
-import RecipeAPI from '../api';
 
 class RecipeGrid extends Component {
   constructor() {
     super();
 
     this.state = {
-      recipes: [...RecipeAPI.all()]
+      recipes: [...store.getState().recipes]
     }
   }
 
