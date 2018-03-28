@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import RecipeAPI from '../api';
+import store from '../store';
 
 class Recipe extends Component {
   constructor(props) {
@@ -10,7 +11,8 @@ class Recipe extends Component {
   }
 
   render() {
-    const recipe = RecipeAPI.get(this.props.match.params.code);
+    const recipe = store.getState().recipes.find(r => r.code === this.props.match.params.code);
+    // const recipe = RecipeAPI.get(this.props.match.params.code);
     if (!recipe) {
       return <div>Sorry, but the recipe was not found.</div>;
     }
