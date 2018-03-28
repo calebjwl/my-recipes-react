@@ -8,6 +8,11 @@ class Recipe extends Component {
   constructor(props) {
     super();
     this.props = props;
+    this.deleteRecipe = this.deleteRecipe.bind(this);
+  }
+
+  deleteRecipe(recipe) {
+
   }
 
   render() {
@@ -26,6 +31,7 @@ class Recipe extends Component {
         <p>{recipe.directions}</p>
         <p>Cook time: {recipe.cookTime}</p>
         <p>Servings: {recipe.servings}</p>
+        <button className="delete">Delete Recipe</button>
       </div>
     );
   }

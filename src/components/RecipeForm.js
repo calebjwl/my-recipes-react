@@ -15,7 +15,7 @@ class AddRecipe extends Component {
       code: String(new Date().getTime()),
       id: store.getState().recipes.length,
       name: this.refs.name.value,
-      imageLink: this.refs.imageLink.value,
+      image: this.refs.image.value,
       ingredients: this.refs.ingredients.value,
       directions: this.refs.directions.value,
       cookTime: this.refs.cookTime.value,
@@ -37,7 +37,7 @@ class AddRecipe extends Component {
           </div>
           <div className="control">
             <label className="label">Image Link</label>
-            <input type="text" ref="imageLink" />
+            <input type="text" ref="image" />
           </div>
           <div className="control">
             <label className="label">Ingredients</label>
