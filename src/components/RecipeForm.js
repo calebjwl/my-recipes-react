@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import history from '../history'
+import store from '../store'
+
 class AddRecipe extends Component {
   constructor() {
     super();
@@ -10,6 +13,7 @@ class AddRecipe extends Component {
     e.preventDefault();
     const recipe = {
       code: String(new Date().getTime()),
+      id: store.getState().recipes.length,
       name: this.refs.name.value,
       imageLink: this.refs.imageLink.value,
       ingredients: this.refs.ingredients.value,
@@ -19,6 +23,7 @@ class AddRecipe extends Component {
     }
     this.refs.commentForm.reset();
     this.props.addRecipe(recipe);
+    history.push('/');
   }
 
   render() {

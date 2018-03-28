@@ -21,6 +21,7 @@ class RecipeGrid extends Component {
             // <Recipe {...recipe} key={recipe.id}/>
             <Link to={`/recipe/${recipe.code}`} key={recipe.id}>
               <p>{recipe.name}</p>
+              <img src={recipe.image} alt={recipe.name} className="recipe__image"/>
             </Link>
           )}
         </div>
