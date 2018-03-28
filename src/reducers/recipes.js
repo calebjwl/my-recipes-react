@@ -15,4 +15,16 @@ function recipes(state=[], action) {
   }
 }
 
+// function recipes(state=[], action) {
+  // const code = action.recipe.code;
+  // console.log(action.recipe);
+  // if(typeof code !== 'undefined') {
+  //   return {
+  //     ...state,
+  //     [code]: postRecipes(state[code], action)
+  //   }
+  // }
+//   return state;
+// }
+
 export default recipes;

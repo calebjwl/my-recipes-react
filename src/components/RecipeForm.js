@@ -9,6 +9,7 @@ class AddRecipe extends Component {
   handleSubmit(e) {
     e.preventDefault();
     const recipe = {
+      code: String(new Date().getTime()),
       name: this.refs.name.value,
       imageLink: this.refs.imageLink.value,
       ingredients: this.refs.ingredients.value,
@@ -18,7 +19,6 @@ class AddRecipe extends Component {
     }
     this.refs.commentForm.reset();
     this.props.addRecipe(recipe);
-    console.log(recipe);
   }
 
   render() {
