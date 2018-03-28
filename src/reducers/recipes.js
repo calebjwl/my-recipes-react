@@ -5,8 +5,8 @@
 function recipes(state=[], action) {
   switch(action.type) {
     case 'ADD_RECIPE': 
-      console.log('addrecipe');
-      break;
+      console.log(state);
+      return [...state, action.recipe]; 
     case 'DELETE_RECIPE':
       console.log('deleterecipe');
       break;

@@ -17,6 +17,7 @@ class AddRecipe extends Component {
       servings: this.refs.servings.value,
     }
     this.refs.commentForm.reset();
+    this.props.addRecipe(recipe);
     console.log(recipe);
   }
 
@@ -46,7 +47,7 @@ class AddRecipe extends Component {
             <input type="number" ref="cookTime" />
           </div>
           <div className="control">
-            <label className="label">Numer of Servings</label>
+            <label className="label">Number of Servings</label>
             <input type="number" ref="servings" />
           </div>
           <input type="submit" className="submit" value="submit" />
