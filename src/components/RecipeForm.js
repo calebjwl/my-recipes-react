@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import history from '../history'
 import store from '../store'
 
-class AddRecipe extends Component {
+class RecipeForm extends Component {
   constructor() {
     super();
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -62,4 +62,4 @@ class AddRecipe extends Component {
   }
 }
 
-export default AddRecipe;
+export default RecipeForm;

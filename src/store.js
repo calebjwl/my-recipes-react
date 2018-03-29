@@ -3,10 +3,8 @@ import { syncHistoryWithStore } from 'react-router-redux';
 
 import browserHistory from './history';
 import rootReducer from './reducers/index';
-import RecipeAPI from './api';
 import { loadState, saveState } from './localStorage';
 
-// const defaultState = { recipes: [...RecipeAPI.all()]};
 const persistedState = loadState();
 
 const enhancers = compose(
@@ -20,12 +18,5 @@ store.subscribe(() => {
 });
 
 export const history = syncHistoryWithStore(browserHistory, store);
-
-// if (module.hot) {
-//   module.hot.accept('./reducers/', () => {
-//     const nextRootReducer = require('./reducers/index').default;
-//     store.replaceReducer(nextRootReducer);
-//   });
-// }
 
 export default store;

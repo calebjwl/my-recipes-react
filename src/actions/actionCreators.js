@@ -1,4 +1,3 @@
-// add recipe
 export function addRecipe(recipe) {
   return {
     type: 'ADD_RECIPE',
@@ -6,7 +5,6 @@ export function addRecipe(recipe) {
   }
 }
 
-// remove recipe 
 export function deleteRecipe(index) {
   return {
     type: 'DELETE_RECIPE',

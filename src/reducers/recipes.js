@@ -8,8 +8,8 @@ function recipes(state=[], action) {
       console.log(state);
       return [...state, action.recipe]; 
     case 'DELETE_RECIPE':
-      console.log('deleterecipe');
-      break;
+      // return state.filter(r => r.id !== action.index);
+      return state;
     default:
       return state;
   }
