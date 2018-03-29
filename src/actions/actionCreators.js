@@ -5,9 +5,9 @@ export function addRecipe(recipe) {
   }
 }
 
-export function deleteRecipe(index) {
+export function deleteRecipe(id) {
   return {
     type: 'DELETE_RECIPE',
-    index
+    id
   }
 }

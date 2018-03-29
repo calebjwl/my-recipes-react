@@ -5,11 +5,9 @@
 function recipes(state=[], action) {
   switch(action.type) {
     case 'ADD_RECIPE': 
-      console.log(state);
       return [...state, action.recipe]; 
     case 'DELETE_RECIPE':
-      // return state.filter(r => r.id !== action.index);
-      return state;
+      return state.filter(r => r.id !== action.id);
     default:
       return state;
   }

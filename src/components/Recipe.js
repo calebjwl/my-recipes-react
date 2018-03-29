@@ -5,11 +5,19 @@ import { connect } from 'react-redux';
 import * as actionCreators from '../actions/actionCreators';
 
 import store from '../store';
+import history from '../history';
 
 class Single extends Component {
   constructor(props) {
     super();
     this.props = props;
+    this.delete = this.delete.bind(this);
+  }
+
+  delete(recipeId) {
+    console.log(recipeId);
+    this.props.deleteRecipe(recipeId);
+    history.push('/');
   }
 
   render() {
@@ -27,7 +35,8 @@ class Single extends Component {
         <p>{recipe.directions}</p>
         <p>Cook time: {recipe.cookTime}</p>
         <p>Servings: {recipe.servings}</p>
-        <button className="delete" onClick={this.props.deleteRecipe(recipe.id)}>Delete Recipe</button>
+        <button className="delete" onClick={this.delete.bind(null, recipe.id)}>Delete Recipe</button>
+        {/* <button className="delete" onClick={this.props.deleteRecipe.bind(null, recipe.id)}>Delete Recipe</button> */}
       </div>
     );
   }
