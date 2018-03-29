@@ -15,7 +15,6 @@ class Single extends Component {
   }
 
   delete(recipeId) {
-    console.log(recipeId);
     this.props.deleteRecipe(recipeId);
     history.push('/');
   }

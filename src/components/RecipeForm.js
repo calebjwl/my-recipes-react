@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import sampleRecipes from '../sample-recipes'
 import history from '../history'
 import store from '../store'
 
@@ -7,6 +8,7 @@ class RecipeForm extends Component {
   constructor() {
     super();
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.loadSampleRecipe = this.loadSampleRecipe.bind(this);
   }
 
   handleSubmit(e) {
@@ -26,10 +28,22 @@ class RecipeForm extends Component {
     history.push('/');
   }
 
+  loadSampleRecipe() {
+    const randomIndex = Math.floor(Math.random() * sampleRecipes.length);
+    const randomRecipe = sampleRecipes[randomIndex];
+    this.refs.name.value = randomRecipe.name;
+    this.refs.image.value = randomRecipe.image;
+    this.refs.ingredients.value = randomRecipe.ingredients;
+    this.refs.directions.value = randomRecipe.directions;
+    this.refs.cookTime.value = randomRecipe.cookTime;
+    this.refs.servings.value = randomRecipe.servings;
+  }
+
   render() {
     return (
       <div>
         <h1>Add Recipe</h1>
+        <button onClick={this.loadSampleRecipe}>Load Sample</button>
         <form ref="commentForm" onSubmit={this.handleSubmit}>
           <div className="control">
             <label className="label">Recipe Name</label>
