@@ -6,7 +6,7 @@ class Navbar extends Component {
     return (
       <nav className="navbar">
         <div className="navbar__content">
-          <Link to="/" className="navbar__link">Home</Link>
+          <Link to="/" className="navbar__link -home">MyRecipes</Link>
           <Link to="/add-recipe" className="navbar__link">Add Recipe</Link>
         </div>
       </nav>

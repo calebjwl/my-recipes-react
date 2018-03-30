@@ -18,14 +18,17 @@ class RecipeGrid extends Component {
       )
     }
     return (
-      <div>
-        <h1>Grid</h1>
+      <div className="container">
         <div className="grid">
           {this.state.recipes.map((recipe) => 
-            <Link to={`/recipe/${recipe.code}`} key={recipe.id}>
-              <p>{recipe.name}</p>
-              <img src={recipe.image} alt={recipe.name} className="recipe__image"/>
-            </Link>
+            <div className="grid__item">
+              <Link to={`/recipe/${recipe.code}`} key={recipe.id}>
+                <div className="recipe-card">
+                  <p className="recipe-card__title">{recipe.name}</p>
+                  <img src={recipe.image} alt={recipe.name} className="recipe-card__image"/>
+                </div>
+              </Link>
+            </div>
           )}
         </div>
       </div>

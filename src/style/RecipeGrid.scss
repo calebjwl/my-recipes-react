@@ -1,0 +1,16 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1rem;
+
+  &__item {
+    width: calc(100% / 3 - 2rem);
+    margin: 1rem;
+  }
+}
+
+.recipe-card {
+  &__image {
+    width: 100%;
+  }
+}

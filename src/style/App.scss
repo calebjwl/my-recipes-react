@@ -3,11 +3,12 @@ $c-primary: rgb(118, 209, 242);
 $c-white: rgb(250, 250, 250);
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
 @import 'reset';
-@import 'navbar';
+@import 'Navbar';
+@import 'RecipeGrid';
 
-.recipe {
-  &__image {
-    width: 20rem;
-  }
+.container {
+  max-width: $m-max-width;
+  margin: 0 auto;
 }

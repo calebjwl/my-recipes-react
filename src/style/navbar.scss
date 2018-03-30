@@ -5,6 +5,7 @@
   &__content {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 0 auto;
     max-width: $m-max-width;
   }
@@ -12,4 +13,9 @@
   &__link {
     color: $c-white;
   }
+}
+
+.-home {
+  font-family: 'Pacifico', sans-serif;
+  font-size: 20px;
 }
