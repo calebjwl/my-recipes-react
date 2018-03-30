@@ -19,6 +19,21 @@ class Single extends Component {
     history.push('/');
   }
 
+  edit(recipeId) {
+    history.push('/edit/:id');
+    const recipe = {
+      code: String(new Date().getTime()),
+      id: store.getState().recipes.length,
+      name: this.refs.name.value,
+      image: this.refs.image.value,
+      ingredients: this.refs.ingredients.value,
+      directions: this.refs.directions.value,
+      cookTime: this.refs.cookTime.value,
+      servings: this.refs.servings.value,
+    }
+    this.props.editRecipe(recipeId);
+  }
+
   render() {
     const recipe = store.getState().recipes.find(r => r.code === this.props.match.params.code);
     if (!recipe) {
@@ -34,8 +49,8 @@ class Single extends Component {
         <p>{recipe.directions}</p>
         <p>Cook time: {recipe.cookTime}</p>
         <p>Servings: {recipe.servings}</p>
-        <button className="delete" onClick={this.delete.bind(null, recipe.id)}>Delete Recipe</button>
-        {/* <button className="delete" onClick={this.props.deleteRecipe.bind(null, recipe.id)}>Delete Recipe</button> */}
+        <button className="edit">Edit</button>
+        <button className="delete" onClick={this.delete.bind(null, recipe.id)}>Delete</button>
       </div>
     );
   }

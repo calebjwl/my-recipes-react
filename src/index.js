@@ -6,14 +6,14 @@ import { Provider } from 'react-redux';
 import store from './store';
 import history from './history';
 
-import Header from './components/Header';
+import Navbar from './components/Navbar';
 import App from './components/App';
 
 const router = (
   <Provider store={store}>
     <Router history={history}>
       <div>
-        <Header/>
+        <Navbar/>
         <Route path="/" component={App}></Route>
       </div>
     </Router>

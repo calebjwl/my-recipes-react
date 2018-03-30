@@ -1,0 +1,15 @@
+.navbar {
+  background: $c-primary;
+  padding: 1rem;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: $m-max-width;
+  }
+
+  &__link {
+    color: $c-white;
+  }
+}

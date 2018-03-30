@@ -11,3 +11,10 @@ export function deleteRecipe(id) {
     id
   }
 }
+
+export function editRecipe(id) {
+  return {
+    type: 'EDIT_RECIPE',
+    id
+  }
+}
