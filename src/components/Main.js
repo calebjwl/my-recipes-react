@@ -10,9 +10,11 @@ class Main extends Component {
   render() {
     return (
       <Switch>
-        <Route exact path='/' component={RecipeGrid}/>
-        <Route path='/recipe/:code' component={Recipe}/>
-        <Route path='/add-recipe' component={AddRecipe}/>
+        <div className="container">
+          <Route exact path='/' component={RecipeGrid}/>
+          <Route path='/recipe/:code' component={Recipe}/>
+          <Route path='/add-recipe' component={AddRecipe}/>
+        </div>
       </Switch>
     )
   }

@@ -40,17 +40,21 @@ class Single extends Component {
       return <div>Sorry, but the recipe was not found.</div>;
     }
     return (
-      <div className="recipe" key={recipe.id}>
-        <Link to={`/recipe/${recipe.code}`}>
-          <img src={recipe.image} alt={recipe.name} className="recipe__image"/>
-        </Link>
-        <p>{recipe.name}</p>
-        <p>{recipe.ingredients}</p>
-        <p>{recipe.directions}</p>
-        <p>Cook time: {recipe.cookTime}</p>
-        <p>Servings: {recipe.servings}</p>
-        <button className="edit">Edit</button>
-        <button className="delete" onClick={this.delete.bind(null, recipe.id)}>Delete</button>
+      <div className="recipe recipe-card">
+        <img src={recipe.image} alt={recipe.name} className="recipe__image"/>
+        <div className="recipe__info">
+          <p className="recipe-card__name recipe__name">{recipe.name}</p>
+          <div className="recipe-card__list">
+            <i className="far fa-clock icon"></i>
+            <p className="recipe-card__list-item">{recipe.cookTime} mins</p>
+            <i className="fas fa-chart-pie icon"></i>
+            <p className="recipe-card__list-item">{recipe.servings} servings</p>
+          </div>
+          <p>{recipe.ingredients}</p>
+          <p>{recipe.directions}</p>
+          <button className="edit button">Edit</button>
+          <button className="delete button" onClick={this.delete.bind(null, recipe.id)}>Delete</button>
+        </div>
       </div>
     );
   }

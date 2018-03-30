@@ -18,25 +18,23 @@ class RecipeGrid extends Component {
       )
     }
     return (
-      <div className="container">
-        <div className="grid">
-          {this.state.recipes.map((recipe) => 
-            <div className="grid__item">
-              <Link to={`/recipe/${recipe.code}`} key={recipe.id}>
-                <div className="recipe-card">
-                  <img src={recipe.image} alt={recipe.name} className="recipe-card__image"/>
-                  <p className="recipe-card__title">{recipe.name}</p>
-                  <div class="recipe-card__list">
-                    <i class="far fa-clock icon"></i>
-                    <p class="recipe-card__list-item">{recipe.cookTime} mins</p>
-                    <i class="fas fa-chart-pie icon"></i>
-                    <p class="recipe-card__list-item">{recipe.servings} servings</p>
-                  </div>
+      <div className="grid">
+        {this.state.recipes.map((recipe) => 
+          <div className="grid__item">
+            <Link to={`/recipe/${recipe.code}`} key={recipe.id}>
+              <div className="recipe-card">
+                <img src={recipe.image} alt={recipe.name} className="recipe-card__image"/>
+                <p className="recipe-card__name">{recipe.name}</p>
+                <div className="recipe-card__list">
+                  <i className="far fa-clock icon"></i>
+                  <p className="recipe-card__list-item">{recipe.cookTime} mins</p>
+                  <i className="fas fa-chart-pie icon"></i>
+                  <p className="recipe-card__list-item">{recipe.servings} servings</p>
                 </div>
-              </Link>
-            </div>
-          )}
-        </div>
+              </div>
+            </Link>
+          </div>
+        )}
       </div>
     );
   }
