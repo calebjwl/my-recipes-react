@@ -19,20 +19,20 @@ class Single extends Component {
     history.push('/');
   }
 
-  edit(recipeId) {
-    history.push('/edit/:id');
-    const recipe = {
-      code: String(new Date().getTime()),
-      id: store.getState().recipes.length,
-      name: this.refs.name.value,
-      image: this.refs.image.value,
-      ingredients: this.refs.ingredients.value,
-      directions: this.refs.directions.value,
-      cookTime: this.refs.cookTime.value,
-      servings: this.refs.servings.value,
-    }
-    this.props.editRecipe(recipeId);
-  }
+  // edit(recipeId) {
+  //   history.push('/edit/:id');
+  //   const recipe = {
+  //     code: String(new Date().getTime()),
+  //     id: store.getState().recipes.length,
+  //     name: this.refs.name.value,
+  //     image: this.refs.image.value,
+  //     ingredients: this.refs.ingredients.value,
+  //     directions: this.refs.directions.value,
+  //     cookTime: this.refs.cookTime.value,
+  //     servings: this.refs.servings.value,
+  //   }
+  //   this.props.editRecipe(recipeId);
+  // }
 
   render() {
     const recipe = store.getState().recipes.find(r => r.code === this.props.match.params.code);
