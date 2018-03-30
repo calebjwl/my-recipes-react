@@ -21,4 +21,14 @@
   &__title {
     color: $c-black;
   }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    color: $c-grey;
+
+    &-item {
+      margin: 0 1rem 0 0.2rem;
+    }
+  }
 }
