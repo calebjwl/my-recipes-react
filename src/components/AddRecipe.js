@@ -16,13 +16,24 @@ class RecipeForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    const ingredientInputs = this.refs.ingredients.getElementsByTagName("input");
+    const directionInputs = this.refs.directions.getElementsByTagName("input");
+    const ingredients = [];
+    const directions = [];
+    for(let i = 0; i < ingredientInputs.length; i ++) {
+      ingredients.push(ingredientInputs[i].value);
+    }
+    for(let i = 0; i < directionInputs.length; i ++) {
+      directions.push(directionInputs[i].value);
+    }
+
     const recipe = {
       code: String(new Date().getTime()),
       id: store.getState().recipes.length,
       name: this.refs.name.value,
       image: this.refs.image.value,
-      ingredients: this.refs.ingredients.value,
-      directions: this.refs.directions.value,
+      ingredients: ingredients,
+      directions: directions,
       cookTime: this.refs.cookTime.value,
       servings: this.refs.servings.value,
     }
@@ -58,11 +69,31 @@ class RecipeForm extends Component {
           </div>
           <div className="control">
             <label className="label">Ingredients</label>
-            <textarea cols="30" rows="10" ref="ingredients"></textarea>
+            <ul className="" ref="ingredients">
+              <li>
+                <input type="text" ref="" />
+              </li>
+              <li>
+                <input type="text" ref="" />
+              </li>
+              <li>
+                <input type="text" ref="" />
+              </li>
+            </ul>
           </div>
           <div className="control">
             <label className="label">Directions</label>
-            <textarea cols="30" rows="10" ref="directions"></textarea>
+            <ul className="" ref="directions">
+              <li>
+                <input type="text" ref="" />
+              </li>
+              <li>
+                <input type="text" ref="" />
+              </li>
+              <li>
+                <input type="text" ref="" />
+              </li>
+            </ul>
           </div>
           <div className="control">
             <label className="label">Cook Time</label>
