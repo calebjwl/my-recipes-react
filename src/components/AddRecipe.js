@@ -3,9 +3,9 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import * as actionCreators from '../actions/actionCreators';
-import sampleRecipes from '../sample-recipes'
-import history from '../history'
-import store from '../store'
+import history from '../history';
+import store from '../store';
+import sampleRecipes from '../sample-recipes';
 
 class RecipeForm extends Component {
   constructor() {
@@ -45,10 +45,19 @@ class RecipeForm extends Component {
   loadSampleRecipe() {
     const randomIndex = Math.floor(Math.random() * sampleRecipes.length);
     const randomRecipe = sampleRecipes[randomIndex];
+  
+    const ingredientInputs = this.refs.ingredients.getElementsByTagName("input");
+    const directionInputs = this.refs.directions.getElementsByTagName("input");
+
+    for(let i = 0; i < ingredientInputs.length; i++) {
+      ingredientInputs[i].value = randomRecipe.ingredients[i];
+    }
+    for(let i = 0; i < directionInputs.length; i++) {
+      directionInputs[i].value = randomRecipe.directions[i];
+    }
+
     this.refs.name.value = randomRecipe.name;
     this.refs.image.value = randomRecipe.image;
-    this.refs.ingredients.value = randomRecipe.ingredients;
-    this.refs.directions.value = randomRecipe.directions;
     this.refs.cookTime.value = randomRecipe.cookTime;
     this.refs.servings.value = randomRecipe.servings;
   }
@@ -83,7 +92,7 @@ class RecipeForm extends Component {
           </div>
           <div className="control">
             <label className="label">Directions</label>
-            <ul className="" ref="directions">
+            <ul className="recipe__directions" ref="directions">
               <li>
                 <input type="text" ref="" />
               </li>

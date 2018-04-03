@@ -14,14 +14,16 @@ class RecipeGrid extends Component {
   render() {
     if(this.state.recipes.length === 0) {
       return (
-        <div>Add a <Link to="/add-recipe">new recipe</Link> homie</div>
+        <div>
+          Add a <Link to="/add-recipe">new recipe</Link>
+        </div>
       )
     }
     return (
       <div className="grid">
         {this.state.recipes.map((recipe) => 
-          <div className="grid__item">
-            <Link to={`/recipe/${recipe.code}`} key={recipe.id}>
+          <div className="grid__item" key={recipe.id}>
+            <Link to={`/recipe/${recipe.code}`}>
               <div className="recipe-card">
                 <img src={recipe.image} alt={recipe.name} className="recipe-card__image"/>
                 <p className="recipe-card__name">{recipe.name}</p>
