@@ -13,9 +13,9 @@ const recipes = [
       'red pepper flakes to taste',
     ],
     directions: [
-      'Toast slice of bread. While waiting, slice avocado in half vertically and remove pit.',
-      'Once toast is finished, spread cream cheese and score avocado halves vertically.',
-      'Spread avocado on top of cream cheese and season with salt, pepper, and red pepper flakes to taste.Serve with lemon slice.',
+      'Toast slice of bread. Slice avocado in half vertically and remove pit.',
+      'Once bread is toasted, spread cream cheese on toast and score avocado halves vertically.',
+      'Spread avocado on top of cream cheese and season with salt, pepper, and red pepper flakes to taste. Serve with lemon slice.',
     ],
     cookTime: 5,
     servings: 1

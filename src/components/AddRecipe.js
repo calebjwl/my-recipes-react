@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import validator from 'validator';
 
 import * as actionCreators from '../actions/actionCreators';
 import history from '../history';
@@ -17,32 +18,47 @@ class RecipeForm extends Component {
     this.addDirection = this.addDirection.bind(this);
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    const ingredientInputs = this.refs.ingredients.getElementsByTagName("input");
-    const directionInputs = this.refs.directions.getElementsByTagName("input");
-    const ingredients = [];
-    const directions = [];
-    for(let i = 0; i < ingredientInputs.length; i ++) {
-      ingredients.push(ingredientInputs[i].value);
+  validateForm() {
+    const inputs = this.refs.recipeForm.querySelectorAll('input');
+    for (let i = 0; i < inputs.length; i++) {
+      if (validator.isEmpty(inputs[i].value)) {
+        return inputs[i].ref;
+      } else {
+        return true;
+      }
     }
-    for(let i = 0; i < directionInputs.length; i ++) {
-      directions.push(directionInputs[i].value);
-    }
+  }
 
-    const recipe = {
-      code: String(new Date().getTime()),
-      id: store.getState().recipes.length,
-      name: this.refs.name.value,
-      image: this.refs.image.value,
-      ingredients: ingredients,
-      directions: directions,
-      cookTime: this.refs.cookTime.value,
-      servings: this.refs.servings.value,
+  handleSubmit(e) {
+    if(this.validateForm()) {
+      e.preventDefault();
+      const ingredientInputs = this.refs.ingredients.getElementsByTagName("input");
+      const directionInputs = this.refs.directions.getElementsByTagName("input");
+      const ingredients = [];
+      const directions = [];
+      for(let i = 0; i < ingredientInputs.length; i ++) {
+        ingredients.push(ingredientInputs[i].value);
+      }
+      for(let i = 0; i < directionInputs.length; i ++) {
+        directions.push(directionInputs[i].value);
+      }
+  
+      const recipe = {
+        code: String(new Date().getTime()),
+        id: store.getState().recipes.length,
+        name: this.refs.name.value,
+        image: this.refs.image.value,
+        ingredients: ingredients,
+        directions: directions,
+        cookTime: this.refs.cookTime.value,
+        servings: this.refs.servings.value,
+      }
+      this.refs.recipeForm.reset();
+      this.props.addRecipe(recipe);
+      history.push('/');
+    } else {
+      alert('somtim wong');
     }
-    this.refs.recipeForm.reset();
-    this.props.addRecipe(recipe);
-    history.push('/');
   }
 
   clearForm() {
@@ -149,7 +165,7 @@ class RecipeForm extends Component {
           </div>
           <div className="right">
             <button onClick={this.clearForm} className="button warning" type="button">Clear</button>
-            <input type="submit" className="button submit" value="Submit"/>
+            <button className="button submit">Submit</button>
           </div>
         </form>
       </div>
