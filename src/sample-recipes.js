@@ -69,7 +69,8 @@ const recipes = [
       'Whisk together the Sauce ingredients in a small bowl.',
       'Drizzle oil in a non stick fry pan and heat over medium high heat (or just under, if your stove runs hot). Place salmon in the pan, and cook the first side for 3 minutes. Turn, then cook the other side for 2 minutes, or to taste.',
       'Pour Sauce over salmon. Cook for 1 minute or until it starts to thicken slightly. Check the side of the salmon to tell how cooked through the middle is - I like mine rare inside. (Note 1). If Sauce thickens too much before your salmon is cooked to your taste, just add water 1 tbsp at a time.',
-      'Remove onto serving plates. 6. Serve salmon drizzled with Sauce, sprinkled with sesame seeds and chives/shallots, if desired.'
+      'Remove onto serving plates.',
+      'Serve salmon drizzled with Sauce, sprinkled with sesame seeds and chives/shallots, if desired.'
     ],
     cookTime: 15,
     servings: 2

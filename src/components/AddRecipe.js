@@ -51,10 +51,22 @@ class RecipeForm extends Component {
     const ingredientInputs = this.refs.ingredients.getElementsByTagName("input");
     const directionInputs = this.refs.directions.getElementsByTagName("input");
 
-    for(let i = 0; i < ingredientInputs.length; i++) {
+    this.refs.ingredients.innerHTML = '';
+    this.refs.directions.innerHTML = '';
+    
+    for(let i = 0; i < randomRecipe.ingredients.length; i++) {
+      this.refs.ingredients.innerHTML += '<li><input type="text" ref=""/></li>';
+    }
+    
+    for (let i = 0; i < randomRecipe.ingredients.length; i++) {
       ingredientInputs[i].value = randomRecipe.ingredients[i];
     }
-    for(let i = 0; i < directionInputs.length; i++) {
+    
+    for(let i = 0; i < randomRecipe.directions.length; i++) {
+      this.refs.directions.innerHTML += '<li><input type="text" ref=""/></li>';
+    }
+    
+    for (let i = 0; i < randomRecipe.directions.length; i++) {
       directionInputs[i].value = randomRecipe.directions[i];
     }
 
