@@ -47,6 +47,8 @@ class RecipeForm extends Component {
 
   clearForm() {
     this.refs.recipeForm.reset();
+    this.refs.ingredients.innerHTML = '<li><input type="text"/></li><li><input type="text"/></li>';
+    this.refs.directions.innerHTML = '<li><input type="text"/></li><li><input type="text"/></li>';
   }
 
   loadSampleRecipe() {
@@ -118,12 +120,9 @@ class RecipeForm extends Component {
               <li>
                 <input type="text"/>
               </li>
-              <li>
-                <input type="text"/>
-              </li>
             </ul>
             <ul>
-              <li className="add-item" onClick={this.addIngredient}>+</li>
+              <li className="add-item submit" onClick={this.addIngredient}>+</li>
             </ul>
           </div>
           <div className="control">
@@ -135,12 +134,9 @@ class RecipeForm extends Component {
               <li>
                 <input type="text"/>
               </li>
-              <li>
-                <input type="text"/>
-              </li>
             </ul>
             <ul>
-              <li className="add-item" onClick={this.addDirection}>+</li>
+              <li className="add-item submit" onClick={this.addDirection}>+</li>
             </ul>
           </div>
           <div className="control">
