@@ -13,6 +13,7 @@ class RecipeForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.loadSampleRecipe = this.loadSampleRecipe.bind(this);
     this.addIngredient = this.addIngredient.bind(this);
+    this.addDirection = this.addDirection.bind(this);
   }
 
   handleSubmit(e) {
@@ -65,7 +66,10 @@ class RecipeForm extends Component {
 
   addIngredient() {
     this.refs.ingredients.innerHTML += '<li><input type="text" ref=""/></li>';
-    console.log('poo');
+  }
+
+  addDirection() {
+    this.refs.directions.innerHTML += '<li><input type="text" ref=""/></li>';
   }
 
   render() {
@@ -111,6 +115,9 @@ class RecipeForm extends Component {
               <li>
                 <input type="text" ref="" />
               </li>
+            </ul>
+            <ul>
+              <li className="add-item" onClick={this.addDirection}>+</li>
             </ul>
           </div>
           <div className="control">
