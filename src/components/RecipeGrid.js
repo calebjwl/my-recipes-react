@@ -14,8 +14,11 @@ class RecipeGrid extends Component {
   render() {
     if(this.state.recipes.length === 0) {
       return (
-        <div>
-          Add a <Link to="/add-recipe">new recipe</Link>
+        <div className="message">
+          <h1>
+            No recipes to display.<br/>
+            <Link to="/add-recipe">Click here</Link> to add a new recipe.
+          </h1>
         </div>
       )
     }

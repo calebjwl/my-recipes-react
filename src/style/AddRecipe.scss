@@ -1,0 +1,36 @@
+.add-recipe {
+  width: 100%;
+}
+
+.add-item {
+  align-items: center;
+  background: $c-submit;
+  border-radius: 50%;
+  color: $c-white;
+  cursor: pointer;
+  display: flex;
+  height: 1.5rem;
+  justify-content: center;
+  margin-top: -2rem;
+  margin-bottom: .5rem;
+  width: 1.5rem;
+}
+
+.form {
+  background: $c-white;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+
+  & input {
+    border: 1px solid rgba($c-grey, 0.25);
+    border-radius: 5px;
+    font-size: 1rem;
+    margin: .5rem 0;
+    padding: .5rem;
+  }
+}

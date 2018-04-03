@@ -9,6 +9,20 @@
   }
 }
 
+.message {
+  text-align: center;
+  margin: 5rem;
+  font-size: .75rem;
+  
+  & a {
+    color: $c-primary;
+
+    &:hover {
+      color: rgba($c-primary, .75);
+    }
+  }
+}
+
 .recipe-card {
   background: $c-white;
   padding: 1rem;

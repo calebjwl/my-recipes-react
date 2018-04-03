@@ -12,6 +12,7 @@ class RecipeForm extends Component {
     super();
     this.handleSubmit = this.handleSubmit.bind(this);
     this.loadSampleRecipe = this.loadSampleRecipe.bind(this);
+    this.addIngredient = this.addIngredient.bind(this);
   }
 
   handleSubmit(e) {
@@ -62,22 +63,27 @@ class RecipeForm extends Component {
     this.refs.servings.value = randomRecipe.servings;
   }
 
+  addIngredient() {
+    this.refs.ingredients.innerHTML += '<li><input type="text" ref=""/></li>';
+    console.log('poo');
+  }
+
   render() {
     return (
-      <div>
+      <div className="add-recipe">
         <h1>Add Recipe</h1>
         <button onClick={this.loadSampleRecipe}>Load Sample</button>
-        <form ref="commentForm" onSubmit={this.handleSubmit}>
+        <form ref="commentForm" onSubmit={this.handleSubmit} className="form">
           <div className="control">
-            <label className="label">Recipe Name</label>
+            <label className="control__label">Recipe Name</label>
             <input type="text" ref="name" />
           </div>
           <div className="control">
-            <label className="label">Image Link</label>
+            <label className="control__label">Image Link</label>
             <input type="text" ref="image" />
           </div>
           <div className="control">
-            <label className="label">Ingredients</label>
+            <label className="control__label">Ingredients:</label>
             <ul className="" ref="ingredients">
               <li>
                 <input type="text" ref="" />
@@ -89,9 +95,12 @@ class RecipeForm extends Component {
                 <input type="text" ref="" />
               </li>
             </ul>
+            <ul>
+              <li className="add-item" onClick={this.addIngredient}>+</li>
+            </ul>
           </div>
           <div className="control">
-            <label className="label">Directions</label>
+            <label className="control__label">Directions:</label>
             <ul className="recipe__directions" ref="directions">
               <li>
                 <input type="text" ref="" />
@@ -105,11 +114,11 @@ class RecipeForm extends Component {
             </ul>
           </div>
           <div className="control">
-            <label className="label">Cook Time</label>
-            <input type="number" ref="cookTime" />mins
+            <label className="control__label">Cook Time (minutes)</label>
+            <input type="number" ref="cookTime" />
           </div>
           <div className="control">
-            <label className="label">Number of Servings</label>
+            <label className="control__label">Number of Servings</label>
             <input type="number" ref="servings" />
           </div>
           <input type="submit" className="submit" value="submit" />

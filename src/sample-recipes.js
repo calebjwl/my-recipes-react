@@ -27,7 +27,7 @@ const recipes = [
     image: 'https://www.seriouseats.com/recipes/images/20100603-cubano-large.jpg',
     ingredients: [
       '1/4 cup mayonnaise',
-      '1/4 cup mustar',
+      '1/4 cup mustard',
       '1 pinch cayenne pepper',
       '1 (8 ounce) loaf Cuban bread',
       '8 slices Siwss cheese',
