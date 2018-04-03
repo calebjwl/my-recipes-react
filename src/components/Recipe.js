@@ -15,8 +15,13 @@ class Single extends Component {
   }
 
   delete(recipeId) {
-    this.props.deleteRecipe(recipeId);
-    history.push('/');
+    const confirm = window.confirm("Are you sure you want to delete this recipe?");
+    if(confirm) {
+      this.props.deleteRecipe(recipeId);
+      history.push('/');
+    } else {
+      return;
+    }
   }
 
   // edit(recipeId) {
@@ -50,11 +55,13 @@ class Single extends Component {
             <i className="fas fa-chart-pie icon"></i>
             <p className="recipe-card__list-item">{recipe.servings} servings</p>
           </div>
+          <p>Ingredients:</p>
           <ul className="recipe__ingredients">
             {recipe.ingredients.map((ingredient) => 
               <li>{ingredient}</li>
             )}
           </ul>
+          <p>Directions:</p>
           <ul className="recipe__directions">
             {recipe.directions.map((direction) => 
               <li>{direction}</li>

@@ -106,7 +106,7 @@ class RecipeForm extends Component {
           </div>
           <div className="control">
             <label className="label">Cook Time</label>
-            <input type="number" ref="cookTime" />
+            <input type="number" ref="cookTime" />mins
           </div>
           <div className="control">
             <label className="label">Number of Servings</label>
