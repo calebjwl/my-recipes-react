@@ -30,7 +30,7 @@ const recipes = [
       '1/4 cup mustard',
       '1 pinch cayenne pepper',
       '1 (8 ounce) loaf Cuban bread',
-      '8 slices Siwss cheese',
+      '8 slices Swiss cheese',
       '6 thin slices smoked fully-cooked hamd',
       '1 1/2 cups pulled pork, heated',
       '1 large dill pickle, slices thinly lengthwise',

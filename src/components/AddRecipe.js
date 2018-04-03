@@ -11,6 +11,7 @@ class RecipeForm extends Component {
   constructor() {
     super();
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.clearForm = this.clearForm.bind(this);
     this.loadSampleRecipe = this.loadSampleRecipe.bind(this);
     this.addIngredient = this.addIngredient.bind(this);
     this.addDirection = this.addDirection.bind(this);
@@ -42,6 +43,10 @@ class RecipeForm extends Component {
     this.refs.commentForm.reset();
     this.props.addRecipe(recipe);
     history.push('/');
+  }
+
+  clearForm() {
+    this.refs.commentForm.reset();
   }
 
   loadSampleRecipe() {
@@ -88,7 +93,7 @@ class RecipeForm extends Component {
     return (
       <div className="add-recipe">
         <h1>Add Recipe</h1>
-        <button onClick={this.loadSampleRecipe}>Load Sample</button>
+        <button onClick={this.loadSampleRecipe} className="button warning">Load Sample</button>
         <form ref="commentForm" onSubmit={this.handleSubmit} className="form">
           <div className="control">
             <label className="control__label">Recipe Name</label>
@@ -140,7 +145,8 @@ class RecipeForm extends Component {
             <label className="control__label">Number of Servings</label>
             <input type="number" ref="servings" />
           </div>
-          <input type="submit" className="submit" value="submit" />
+          <button onClick={this.clearForm} className="button warning" type="button">Clear</button>
+          <input type="submit" className="button submit" value="Submit" />
         </form>
       </div>
     );
