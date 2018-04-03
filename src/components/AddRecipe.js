@@ -82,11 +82,15 @@ class RecipeForm extends Component {
   }
 
   addIngredient() {
-    this.refs.ingredients.innerHTML += '<li><input type="text"/></li>';
+    const newList = document.createElement('li');
+    newList.innerHTML= '<input type="text"/>';
+    this.refs.ingredients.appendChild(newList);
   }
 
   addDirection() {
-    this.refs.directions.innerHTML += '<li><input type="text"/></li>';
+    const newList = document.createElement('li');
+    newList.innerHTML = '<input type="text"/>';
+    this.refs.directions.appendChild(newList);
   }
 
   render() {
