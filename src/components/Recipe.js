@@ -67,8 +67,10 @@ class Single extends Component {
               <li>{direction}</li>
             )}
           </ul>
-          <button className="edit button">Edit</button>
-          <button className="delete button" onClick={this.delete.bind(null, recipe.id)}>Delete</button>
+          <div className="right">
+            <button className="warning button">Edit</button>
+            <button className="delete button" onClick={this.delete.bind(null, recipe.id)}>Delete</button>
+          </div>
         </div>
       </div>
     );

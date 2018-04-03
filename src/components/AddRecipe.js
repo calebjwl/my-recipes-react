@@ -40,13 +40,13 @@ class RecipeForm extends Component {
       cookTime: this.refs.cookTime.value,
       servings: this.refs.servings.value,
     }
-    this.refs.commentForm.reset();
+    this.refs.recipeForm.reset();
     this.props.addRecipe(recipe);
     history.push('/');
   }
 
   clearForm() {
-    this.refs.commentForm.reset();
+    this.refs.recipeForm.reset();
   }
 
   loadSampleRecipe() {
@@ -60,7 +60,7 @@ class RecipeForm extends Component {
     this.refs.directions.innerHTML = '';
     
     for(let i = 0; i < randomRecipe.ingredients.length; i++) {
-      this.refs.ingredients.innerHTML += '<li><input type="text" ref=""/></li>';
+      this.refs.ingredients.innerHTML += '<li><input type="text"/></li>';
     }
     
     for (let i = 0; i < randomRecipe.ingredients.length; i++) {
@@ -68,7 +68,7 @@ class RecipeForm extends Component {
     }
     
     for(let i = 0; i < randomRecipe.directions.length; i++) {
-      this.refs.directions.innerHTML += '<li><input type="text" ref=""/></li>';
+      this.refs.directions.innerHTML += '<li><input type="text"/></li>';
     }
     
     for (let i = 0; i < randomRecipe.directions.length; i++) {
@@ -82,38 +82,40 @@ class RecipeForm extends Component {
   }
 
   addIngredient() {
-    this.refs.ingredients.innerHTML += '<li><input type="text" ref=""/></li>';
+    this.refs.ingredients.innerHTML += '<li><input type="text"/></li>';
   }
 
   addDirection() {
-    this.refs.directions.innerHTML += '<li><input type="text" ref=""/></li>';
+    this.refs.directions.innerHTML += '<li><input type="text"/></li>';
   }
 
   render() {
     return (
       <div className="add-recipe">
-        <h1>Add Recipe</h1>
-        <button onClick={this.loadSampleRecipe} className="button warning">Load Sample</button>
-        <form ref="commentForm" onSubmit={this.handleSubmit} className="form">
+        <div className="add-recipe__header">
+          <h1>Add Recipe</h1>
+          <button onClick={this.loadSampleRecipe} className="button delete" type="button">Load a Random Recipe</button>
+        </div>
+        <form ref="recipeForm" onSubmit={this.handleSubmit} className="form">
           <div className="control">
             <label className="control__label">Recipe Name</label>
-            <input type="text" ref="name" />
+            <input type="text" ref="name"/>
           </div>
           <div className="control">
             <label className="control__label">Image Link</label>
-            <input type="text" ref="image" />
+            <input type="text" ref="image"/>
           </div>
           <div className="control">
             <label className="control__label">Ingredients:</label>
             <ul className="" ref="ingredients">
               <li>
-                <input type="text" ref="" />
+                <input type="text"/>
               </li>
               <li>
-                <input type="text" ref="" />
+                <input type="text"/>
               </li>
               <li>
-                <input type="text" ref="" />
+                <input type="text"/>
               </li>
             </ul>
             <ul>
@@ -124,13 +126,13 @@ class RecipeForm extends Component {
             <label className="control__label">Directions:</label>
             <ul className="recipe__directions" ref="directions">
               <li>
-                <input type="text" ref="" />
+                <input type="text"/>
               </li>
               <li>
-                <input type="text" ref="" />
+                <input type="text"/>
               </li>
               <li>
-                <input type="text" ref="" />
+                <input type="text"/>
               </li>
             </ul>
             <ul>
@@ -139,14 +141,16 @@ class RecipeForm extends Component {
           </div>
           <div className="control">
             <label className="control__label">Cook Time (minutes)</label>
-            <input type="number" ref="cookTime" />
+            <input type="number" ref="cookTime"/>
           </div>
           <div className="control">
             <label className="control__label">Number of Servings</label>
-            <input type="number" ref="servings" />
+            <input type="number" ref="servings"/>
           </div>
-          <button onClick={this.clearForm} className="button warning" type="button">Clear</button>
-          <input type="submit" className="button submit" value="Submit" />
+          <div className="right">
+            <button onClick={this.clearForm} className="button warning" type="button">Clear</button>
+            <input type="submit" className="button submit" value="Submit"/>
+          </div>
         </form>
       </div>
     );

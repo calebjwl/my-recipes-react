@@ -1,5 +1,11 @@
 .add-recipe {
   width: 100%;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .add-item {
@@ -33,19 +39,4 @@
     margin: .5rem 0;
     padding: .5rem;
   }
-}
-
-.button {
-  border: 0;
-  border-radius: 5px;
-  padding: 0.75rem 1rem;
-  color: $c-white;
-}
-
-.submit {
-  background: $c-submit;
-}
-
-.warning {
-  background: $c-warning;
 }
