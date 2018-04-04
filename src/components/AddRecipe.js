@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import validator from 'validator';
+import FormValidator from './FormValidator';
 
 import * as actionCreators from '../actions/actionCreators';
 import history from '../history';
@@ -16,21 +16,63 @@ class RecipeForm extends Component {
     this.loadSampleRecipe = this.loadSampleRecipe.bind(this);
     this.addIngredient = this.addIngredient.bind(this);
     this.addDirection = this.addDirection.bind(this);
+    
+    this.validator = new FormValidator([
+      {
+        field: 'name',
+        method: 'isEmpty',
+        validenWhen: false,
+        message: 'Please enter a recipe name.'
+      },
+      {
+        field: 'image',
+        method: 'isURL',
+        validenWhen: true,
+        message: 'Please enter a valid image URL.'
+      },
+      {
+        field: 'ingredients',
+        method: 'isEmpty',
+        validenWhen: false,
+        message: 'Please provide at least one ingredient.'
+      },
+      {
+        field: 'directions',
+        method: 'isEmpty',
+        validenWhen: false,
+        message: 'Please provide at least one direction for your recipe.'
+      },
+      {
+        field: 'cookTime',
+        method: 'isEmpty',
+        validenWhen: false,
+        message: 'Please enter a valid cook time.'
+      },
+      {
+        field: 'servings',
+        method: 'isEmpty',
+        validenWhen: false,
+        message: 'Please provide a valid amount of servings.'
+      },
+    ]);
   }
 
   validateForm() {
     const inputs = this.refs.recipeForm.querySelectorAll('input');
     for (let i = 0; i < inputs.length; i++) {
-      if (validator.isEmpty(inputs[i].value)) {
-        return inputs[i].ref;
-      } else {
-        return true;
-      }
+      return inputs[i].value;
+      // if (validator.isEmpty(inputs[i].value)) {
+      //   return inputs[i].ref;
+      // } else {
+      //   return true;
+      // }
     }
   }
 
   handleSubmit(e) {
-    if(this.validateForm()) {
+    console.log(this.validateForm());
+    const validation = myValidator.validate(this.validateForm());
+    if(validation.isValid) {
       e.preventDefault();
       const ingredientInputs = this.refs.ingredients.getElementsByTagName("input");
       const directionInputs = this.refs.directions.getElementsByTagName("input");
@@ -81,7 +123,7 @@ class RecipeForm extends Component {
       this.refs.ingredients.innerHTML += '<li><input type="text"/></li>';
     }
     
-    for (let i = 0; i < randomRecipe.ingredients.length; i++) {
+    for(let i = 0; i < randomRecipe.ingredients.length; i++) {
       ingredientInputs[i].value = randomRecipe.ingredients[i];
     }
     
@@ -89,7 +131,7 @@ class RecipeForm extends Component {
       this.refs.directions.innerHTML += '<li><input type="text"/></li>';
     }
     
-    for (let i = 0; i < randomRecipe.directions.length; i++) {
+    for(let i = 0; i < randomRecipe.directions.length; i++) {
       directionInputs[i].value = randomRecipe.directions[i];
     }
 
