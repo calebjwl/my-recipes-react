@@ -4,7 +4,6 @@
   margin: 0 -1rem;
 
   &__item {
-    flex-grow: 1;
     min-width: 17rem;
     width: calc(100% / 3 - 2rem);
     margin: 1rem;
@@ -50,5 +49,11 @@
     &-item {
       margin: 0 1rem 0 0.2rem;
     }
+  }
+}
+
+@media only screen and (max-width: 915px) {
+  .grid__item {
+    flex-grow: 1;
   }
 }
