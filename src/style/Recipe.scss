@@ -24,3 +24,18 @@
     list-style: decimal;
   }
 }
+
+@media only screen and (max-width: 790px) {
+  .recipe {
+    flex-direction: column;
+
+    &__image {
+      width: 100%;
+      height: 20rem;
+    }
+
+    &__header {
+      margin: 1rem 0 0;
+    }
+  }
+}
