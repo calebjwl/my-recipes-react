@@ -1,4 +1,5 @@
 $m-max-width: 65rem;
+$m-gutter: 1rem;
 $c-primary: rgb(118, 209, 242);
 $c-white: rgb(250, 250, 250);
 $c-grey: rgb(160, 160, 160);
@@ -53,6 +54,10 @@ $t-transition: .2s;
     background: $c-delete-hover;
     transition: $t-transition;
   }
+}
+
+.section {
+  margin: 0 $m-gutter;
 }
 
 .container {
