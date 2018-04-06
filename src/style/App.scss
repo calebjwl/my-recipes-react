@@ -26,13 +26,6 @@ $t-transition: .2s;
   cursor: pointer;
   font-size: 0.8rem;
   padding: 0.75rem 1rem;
-  margin-left: 1rem;
-}
-
-.right {
-  display: flex;
-  justify-content: flex-end;
-  margin: 1rem 0;
 }
 
 .submit {
@@ -65,4 +58,13 @@ $t-transition: .2s;
 .container {
   max-width: $m-max-width;
   margin: 0 auto;
+}
+
+.right {
+  display: flex;
+  justify-content: flex-end;
+
+  & button {
+    margin: 1rem 0 0 1rem;
+  }
 }

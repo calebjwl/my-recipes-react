@@ -48,7 +48,15 @@ class Single extends Component {
       <div className="recipe recipe-card">
         <img src={recipe.image} alt={recipe.name} className="recipe__image"/>
         <div className="recipe__info">
-          <p className="recipe-card__name recipe__name">{recipe.name}</p>
+          <div className="recipe__header">
+            <p className="recipe-card__name recipe__name">{recipe.name}</p>
+            <div>
+              {/* <button className="warning button">Edit</button> */}
+              <button className="delete button" onClick={this.delete.bind(null, recipe.id)}>
+                <i className="fa fa-trash-alt icon"></i>
+              </button>
+            </div>
+          </div>
           <div className="recipe-card__list">
             <i className="far fa-clock icon"></i>
             <p className="recipe-card__list-item">{recipe.cookTime} mins</p>
@@ -67,10 +75,6 @@ class Single extends Component {
               <li>{direction}</li>
             )}
           </ul>
-          <div className="right">
-            <button className="warning button">Edit</button>
-            <button className="delete button" onClick={this.delete.bind(null, recipe.id)}>Delete</button>
-          </div>
         </div>
       </div>
     );

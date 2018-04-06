@@ -1,6 +1,13 @@
 .recipe {
   display: flex;
   margin: 1rem 0;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   &__image {
     width: 40%;
     height: 15rem;

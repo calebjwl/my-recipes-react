@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import validator from 'validator';
-// import FormValidator from './FormValidator';
 
 import * as actionCreators from '../actions/actionCreators';
 import history from '../history';
@@ -17,57 +16,6 @@ class RecipeForm extends Component {
     this.loadSampleRecipe = this.loadSampleRecipe.bind(this);
     this.addIngredient = this.addIngredient.bind(this);
     this.addDirection = this.addDirection.bind(this);
-    
-    // this.validator = new FormValidator([
-    //   {
-    //     field: 'name',
-    //     method: 'isEmpty',
-    //     validenWhen: false,
-    //     message: 'Please enter a recipe name.'
-    //   },
-    //   {
-    //     field: 'image',
-    //     method: 'isURL',
-    //     validenWhen: true,
-    //     message: 'Please enter a valid image URL.'
-    //   },
-    //   {
-    //     field: 'ingredients',
-    //     method: 'isEmpty',
-    //     validenWhen: false,
-    //     message: 'Please provide at least one ingredient.'
-    //   },
-    //   {
-    //     field: 'directions',
-    //     method: 'isEmpty',
-    //     validenWhen: false,
-    //     message: 'Please provide at least one direction for your recipe.'
-    //   },
-    //   {
-    //     field: 'cookTime',
-    //     method: 'isEmpty',
-    //     validenWhen: false,
-    //     message: 'Please enter a valid cook time.'
-    //   },
-    //   {
-    //     field: 'servings',
-    //     method: 'isEmpty',
-    //     validenWhen: false,
-    //     message: 'Please provide a valid amount of servings.'
-    //   },
-    // ]);
-
-    // this.state = {]
-    //   code: '',
-    //   id: '',
-    //   name: '',
-    //   image: '',
-    //   ingredients: '',
-    //   directions: '',
-    //   cookTime: '',
-    //   servings: '',
-    //   validation: this.validator.valid(),
-    // }
   }
 
   validateForm() {
