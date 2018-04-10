@@ -34,23 +34,49 @@ class NewRecipe extends Component {
                   <li>
                     <Text field={['ingredients', 1]}/>
                   </li>
+                  { formApi.values.ingredients && formApi.values.ingredients.map((ingredient, i) => (
+                    <li key={`ingredients${i}`}>
+                      <Text field={['ingredients', i]} />
+                      <button
+                        onClick={() => formApi.removeValue('ingredients', i)}
+                        type="button"
+                        className="delete button">
+                          <i className="fa fa-trash-alt icon"></i>
+                      </button>
+                    </li>
+                  ))}
                 </ul>
                 <ul>
-                  <li className="add-item submit" onClick={this.addIngredient}>+</li>
+                  <li onClick={() => formApi.addValue('ingredients', '')}
+                      type="button"
+                      className="add-item submit">+</li>
                 </ul>
               </div>
               <div className="control">
                 <label className="control__label">Directions:</label>
                 <ul className="recipe__directions" ref="directions">
                   <li>
-                    <Text field={['directions', 0]} />
+                    <Text field={['directions', 0]}/>
                   </li>
                   <li>
-                    <Text field={['directions', 1]} />
+                    <Text field={['directions', 1]}/>
                   </li>
+                  { formApi.values.directions && formApi.values.directions.map((direction, i) => (
+                    <li key={`directions${i}`}>
+                      <Text field={['directions', i]} />
+                      <button
+                        onClick={() => formApi.removeValue('directions', i)}
+                        type="button"
+                        className="delete button">
+                          <i className="fa fa-trash-alt icon"></i>
+                      </button>
+                    </li>
+                  ))}
                 </ul>
                 <ul>
-                  <li className="add-item submit" onClick={this.addDirection}>+</li>
+                  <li onClick={() => formApi.addValue('directions', '')}
+                      type="button"
+                      className="add-item submit">+</li>
                 </ul>
               </div>
               <div className="control">
