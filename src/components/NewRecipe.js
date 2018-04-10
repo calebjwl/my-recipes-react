@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
-import validator from 'validator';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import { Form, Text } from 'react-form';
+import validator from 'validator';
 
-class NewRecipe extends Component {
+import * as actionCreators from '../actions/actionCreators';
+import history from '../history';
+import store from '../store';
+
+class RecipeForm extends Component {
   constructor(props) {
     super(props);
     this.props = props;
@@ -11,9 +17,15 @@ class NewRecipe extends Component {
     this.state = {};
   }
 
-  handleSubmit(recipe) {
-    this.setState({...recipe});
-    this.refs.recipeForm.reset();
+  handleSubmit(values) {
+    const recipe = {
+      ...values,
+      code: String(new Date().getTime()),
+      id: store.getState().recipes.length,
+    }
+    this.props.addRecipe(recipe);
+    console.log(recipe, store.getState());
+    history.push('/');
   }
 
   render() {
@@ -23,9 +35,9 @@ class NewRecipe extends Component {
           <h1>Add Recipe</h1>
           {/* <button onClick={this.loadSampleRecipe} className="button delete" type="button">Load a Random Recipe</button> */}
         </div>
-        <Form onSubmit={recipe => this.handleSubmit(recipe)}>
+        <Form onSubmit={values => this.handleSubmit(values)}>
           {formApi => (
-            <form onSubmit={formApi.submitForm} className="form" ref="recipeForm">
+            <form onSubmit={formApi.submitForm} className="form">
               <div className="control">
                 <label className="control__label">Recipe Name</label>
                 <Text field="name" />
@@ -119,5 +131,17 @@ class NewRecipe extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    recipes: state.recipes
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(actionCreators, dispatch);
+}
+
+const NewRecipe = connect(mapStateToProps, mapDispatchToProps)(RecipeForm);
 
 export default NewRecipe;
