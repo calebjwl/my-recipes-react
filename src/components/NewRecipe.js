@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
+import validator from 'validator';
 import { Form, Text } from 'react-form';
 
 class NewRecipe extends Component {
   constructor(props) {
     super(props);
+    this.props = props;
+    this.handleSubmit = this.handleSubmit.bind(this);
+    
     this.state = {};
+  }
+
+  handleSubmit(recipe) {
+    this.setState({recipe});
   }
 
   render() {
@@ -14,7 +22,7 @@ class NewRecipe extends Component {
           <h1>Add Recipe</h1>
           {/* <button onClick={this.loadSampleRecipe} className="button delete" type="button">Load a Random Recipe</button> */}
         </div>
-        <Form onSubmit={recipe => this.setState({ recipe })}>
+        <Form onSubmit={recipe => this.handleSubmit(recipe)}>
           {formApi => (
             <form onSubmit={formApi.submitForm} className="form">
               <div className="control">
