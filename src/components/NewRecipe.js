@@ -11,8 +11,12 @@ class NewRecipe extends Component {
     this.state = {};
   }
 
+  componentDidMount() {
+    {formApi => formApi.values.ingredients = ['','']}
+  }
+
   handleSubmit(recipe) {
-    this.setState({recipe});
+    this.setState({...recipe});
   }
 
   render() {
@@ -42,17 +46,23 @@ class NewRecipe extends Component {
                   <li>
                     <Text field={['ingredients', 1]}/>
                   </li>
-                  { formApi.values.ingredients && formApi.values.ingredients.map((ingredient, i) => (
-                    <li key={`ingredients${i}`}>
-                      <Text field={['ingredients', i]} />
-                      <button
-                        onClick={() => formApi.removeValue('ingredients', i)}
-                        type="button"
-                        className="delete button">
-                          <i className="fa fa-trash-alt icon"></i>
-                      </button>
-                    </li>
-                  ))}
+                  {formApi.values.ingredients && formApi.values.ingredients.map(function(ingredient, i) {
+                    if(i === 0 || i === 1) {
+                      return null;
+                    } else {
+                      return (
+                        <li key={`ingredients${i}`}>
+                          <Text field={['ingredients', i]} />
+                          <button
+                            onClick={() => formApi.removeValue('ingredients', i)}
+                            type="button"
+                            className="delete button">
+                            <i className="fa fa-trash-alt icon"></i>
+                          </button>
+                        </li>
+                      )
+                    }
+                  })}
                 </ul>
                 <ul>
                   <li onClick={() => formApi.addValue('ingredients', '')}
