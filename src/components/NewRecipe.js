@@ -11,12 +11,9 @@ class NewRecipe extends Component {
     this.state = {};
   }
 
-  componentDidMount() {
-    {formApi => formApi.values.ingredients = ['','']}
-  }
-
   handleSubmit(recipe) {
     this.setState({...recipe});
+    this.refs.recipeForm.reset();
   }
 
   render() {
@@ -28,7 +25,7 @@ class NewRecipe extends Component {
         </div>
         <Form onSubmit={recipe => this.handleSubmit(recipe)}>
           {formApi => (
-            <form onSubmit={formApi.submitForm} className="form">
+            <form onSubmit={formApi.submitForm} className="form" ref="recipeForm">
               <div className="control">
                 <label className="control__label">Recipe Name</label>
                 <Text field="name" />
@@ -79,17 +76,23 @@ class NewRecipe extends Component {
                   <li>
                     <Text field={['directions', 1]}/>
                   </li>
-                  { formApi.values.directions && formApi.values.directions.map((direction, i) => (
-                    <li key={`directions${i}`}>
-                      <Text field={['directions', i]} />
-                      <button
-                        onClick={() => formApi.removeValue('directions', i)}
-                        type="button"
-                        className="delete button">
-                          <i className="fa fa-trash-alt icon"></i>
-                      </button>
-                    </li>
-                  ))}
+                  {formApi.values.directions && formApi.values.directions.map(function(direction, i) {
+                    if(i === 0 || i === 1) {
+                      return null;
+                    } else {
+                      return (
+                        <li key={`directions${i}`}>
+                          <Text field={['directions', i]} />
+                          <button
+                            onClick={() => formApi.removeValue('directions', i)}
+                            type="button"
+                            className="delete button">
+                              <i className="fa fa-trash-alt icon"></i>
+                          </button>
+                        </li>
+                      )
+                    }
+                  })}
                 </ul>
                 <ul>
                   <li onClick={() => formApi.addValue('directions', '')}
