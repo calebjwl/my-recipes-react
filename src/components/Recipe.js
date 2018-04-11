@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actionCreators from '../actions/actionCreators';
@@ -30,7 +29,7 @@ class Single extends Component {
   //     code: String(new Date().getTime()),
   //     id: store.getState().recipes.length,
   //     name: this.refs.name.value,
-  //     image: this.refs.image.value,
+  //     imageLink: this.refs.imageLink.value,
   //     ingredients: this.refs.ingredients.value,
   //     directions: this.refs.directions.value,
   //     cookTime: this.refs.cookTime.value,
@@ -46,7 +45,7 @@ class Single extends Component {
     }
     return (
       <div className="recipe recipe-card">
-        <img src={recipe.image} alt={recipe.name} className="recipe__image"/>
+        <img src={recipe.imageLink} alt={recipe.name} className="recipe__image"/>
         <div className="recipe__info">
           <div className="recipe__header">
             <p className="recipe-card__name recipe__name">{recipe.name}</p>

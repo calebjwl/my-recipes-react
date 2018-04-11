@@ -3,7 +3,7 @@ const recipes = [
     id: 0,
     code: '1522713469631',
     name: 'Avocado Toast',
-    image: 'https://truffle-assets.imgix.net/9f7fc1b6-101-avocadotoast-dishland1.jpg',
+    imageLink: 'https://truffle-assets.imgix.net/9f7fc1b6-101-avocadotoast-dishland1.jpg',
     ingredients: [
       '1 slice whole wheat bread',
       '1 avocado',
@@ -24,7 +24,7 @@ const recipes = [
     id: 1,
     code: '1522713469632',
     name: 'Chef John\'s Cuban Sandwich',
-    image: 'https://www.seriouseats.com/recipes/images/20100603-cubano-large.jpg',
+    imageLink: 'https://www.seriouseats.com/recipes/images/20100603-cubano-large.jpg',
     ingredients: [
       '1/4 cup mayonnaise',
       '1/4 cup mustard',
@@ -49,7 +49,7 @@ const recipes = [
     id: 2,
     code: '1522713469633',
     name: 'Honey Garlic Salmon',
-    image: 'https://www.recipetineats.com/wp-content/uploads/2015/03/Honey-Garlic-Salmon-1.jpg',
+    imageLink: 'https://www.recipetineats.com/wp-content/uploads/2015/03/Honey-Garlic-Salmon-1.jpg',
     ingredients: [
       'Sauce:',
       '4 tbsp honey',
@@ -79,7 +79,7 @@ const recipes = [
     id: 3,
     code: '1522713469634',
     name: 'Chocolate Chip Cookies',
-    image: 'https://t2.rg.ltmcdn.com/pt/images/5/5/5/img_cookies_de_baunilha_com_gotas_de_chocolate_4555_600.jpg',
+    imageLink: 'https://t2.rg.ltmcdn.com/pt/images/5/5/5/img_cookies_de_baunilha_com_gotas_de_chocolate_4555_600.jpg',
     ingredients: [
       '4 1/2 cups all-purpose flour',
       '2 teaspoons baking soda',

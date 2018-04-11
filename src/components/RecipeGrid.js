@@ -28,7 +28,7 @@ class RecipeGrid extends Component {
           <div className="grid__item" key={recipe.id}>
             <Link to={`/recipe/${recipe.code}`}>
               <div className="recipe-card">
-                <img src={recipe.image} alt={recipe.name} className="recipe-card__image"/>
+                <img src={recipe.imageLink} alt={recipe.name} className="recipe-card__image"/>
                 <p className="recipe-card__name">{recipe.name}</p>
                 <div className="recipe-card__list">
                   <i className="far fa-clock icon"></i>

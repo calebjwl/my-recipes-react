@@ -51,7 +51,7 @@ class RecipeForm extends Component {
         code: String(new Date().getTime()),
         id: store.getState().recipes.length,
         name: this.refs.name.value,
-        image: this.refs.image.value,
+        imageLink: this.refs.imageLink.value,
         ingredients: ingredients,
         directions: directions,
         cookTime: this.refs.cookTime.value,
@@ -98,21 +98,28 @@ class RecipeForm extends Component {
     }
 
     this.refs.name.value = randomRecipe.name;
-    this.refs.image.value = randomRecipe.image;
+    this.refs.imageLink.value = randomRecipe.imageLink;
     this.refs.cookTime.value = randomRecipe.cookTime;
     this.refs.servings.value = randomRecipe.servings;
   }
 
   addIngredient() {
-    const newList = document.createElement('li');
-    newList.innerHTML= '<input type="text"/>';
+    const newList = document.createElement("li");
+    newList.innerHTML = '<input type="text"/><button type="button" class="delete button"><i class="fa fa-trash-alt icon"></i></button>';
+    // const remove = document.createElement("button");
+    // remove.value = '<i className="fa fa-trash-alt icon"></i>';
+    // this.refs.ingredients.insertBefore(remove, newList);
     this.refs.ingredients.appendChild(newList);
   }
 
   addDirection() {
-    const newList = document.createElement('li');
+    const newList = document.createElement("li");
     newList.innerHTML = '<input type="text"/>';
     this.refs.directions.appendChild(newList);
+  }
+
+  deleteListItem() {
+    console.log('working');
   }
 
   render() {
@@ -129,7 +136,7 @@ class RecipeForm extends Component {
           </div>
           <div className="control">
             <label className="control__label">Image Link</label>
-            <input type="text" ref="image"/>
+            <input type="text" ref="imageLink"/>
           </div>
           <div className="control">
             <label className="control__label">Ingredients:</label>
