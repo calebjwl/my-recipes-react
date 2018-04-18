@@ -69,11 +69,11 @@ class Single extends Component {
             )}
           </ul>
           <p>Directions:</p>
-          <ul className="recipe__directions">
+          <ol>
             {recipe.directions.map((direction) => 
               <li>{direction}</li>
             )}
-          </ul>
+          </ol>
         </div>
       </div>
     );

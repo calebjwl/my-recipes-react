@@ -5,8 +5,8 @@ import { connect } from 'react-redux';
 import '../style/App.scss';
 import RecipeGrid from './RecipeGrid';
 import Recipe from './Recipe';
-import AddRecipe from './AddRecipe';
-// import NewRecipe from './NewRecipe';
+// import AddRecipe from './AddRecipe';
+import NewRecipe from './NewRecipe';
 
 class Main extends Component {
   render() {
@@ -16,7 +16,7 @@ class Main extends Component {
           <div className="container">
             <Route exact path='/' component={RecipeGrid} />
             <Route path='/recipe/:code' component={Recipe} />
-            <Route path='/add-recipe' component={AddRecipe} />
+            <Route path='/add-recipe' component={NewRecipe} />
           </div>
         </div>
       </Switch>

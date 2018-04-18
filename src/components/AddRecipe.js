@@ -90,7 +90,7 @@ class RecipeForm extends Component {
     }
     
     for(let i = 0; i < randomRecipe.directions.length; i++) {
-      this.refs.directions.innerHTML += '<li><input type="text"/></li>';
+      this.refs.directions.innerHTML += '<li><input class="recipe__direction" type="text"/></li>';
     }
     
     for(let i = 0; i < randomRecipe.directions.length; i++) {
@@ -105,16 +105,13 @@ class RecipeForm extends Component {
 
   addIngredient() {
     const newList = document.createElement("li");
-    newList.innerHTML = '<input type="text"/><button type="button" class="delete button"><i class="fa fa-trash-alt icon"></i></button>';
-    // const remove = document.createElement("button");
-    // remove.value = '<i className="fa fa-trash-alt icon"></i>';
-    // this.refs.ingredients.insertBefore(remove, newList);
+    newList.innerHTML = '<input type="text"/>';
     this.refs.ingredients.appendChild(newList);
   }
-
+  
   addDirection() {
     const newList = document.createElement("li");
-    newList.innerHTML = '<input type="text"/>';
+    newList.innerHTML = '<input class="recipe__direction" type="text"/><button type="button" onclick="deleteListItem()">YO</button>';
     this.refs.directions.appendChild(newList);
   }
 
@@ -154,14 +151,14 @@ class RecipeForm extends Component {
           </div>
           <div className="control">
             <label className="control__label">Directions:</label>
-            <ul className="recipe__directions" ref="directions">
+            <ol ref="directions">
               <li>
-                <input type="text"/>
+                <input type="text" className="recipe__direction"/>
               </li>
               <li>
-                <input type="text"/>
+                <input type="text" className="recipe__direction"/>
               </li>
-            </ul>
+            </ol>
             <ul>
               <li className="add-item submit" onClick={this.addDirection}>+</li>
             </ul>

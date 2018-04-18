@@ -13,6 +13,7 @@ class RecipeForm extends Component {
     super(props);
     this.props = props;
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.clearForm = this.clearForm.bind(this);
     this.loadSampleRecipe = this.loadSampleRecipe.bind(this);
     
     this.state = {};
@@ -27,6 +28,12 @@ class RecipeForm extends Component {
     this.props.addRecipe(recipe);
     console.log(recipe);
     history.push('/');
+  }
+
+  clearForm() {
+    const recipeForm = document.getElementsByTagName("form");
+    recipeForm[0].reset();
+    console.log(recipeForm[0]);
   }
 
   loadSampleRecipe() {
@@ -98,8 +105,8 @@ class RecipeForm extends Component {
                           <button
                             onClick={() => formApi.removeValue('ingredients', i)}
                             type="button"
-                            className="delete button">
-                            <i className="fa fa-trash-alt icon"></i>
+                            className="trash-button">
+                            <i className="fa fa-trash-alt"></i>
                           </button>
                         </li>
                       )
@@ -114,31 +121,31 @@ class RecipeForm extends Component {
               </div>
               <div className="control">
                 <label className="control__label">Directions:</label>
-                <ul className="recipe__directions" id="directions">
+                <ol id="directions">
                   <li>
-                    <Text field={['directions', 0]}/>
+                    <Text field={['directions', 0]} className="recipe__direction"/>
                   </li>
                   <li>
-                    <Text field={['directions', 1]}/>
+                    <Text field={['directions', 1]} className="recipe__direction"/>
                   </li>
                   {formApi.values.directions && formApi.values.directions.map(function(direction, i) {
                     if (i === 0 || i === 1) {
                       return null;
                     } else {
                       return (
-                        <li key={`ingredients${i}`}>
-                          <Text field={['ingredients', i]} />
+                        <li key={`directions${i}`}>
+                          <Text field={['directions', i]} className="recipe__direction"/>
                           <button
-                            onClick={() => formApi.removeValue('ingredients', i)}
+                            onClick={() => formApi.removeValue('directions', i)}
                             type="button"
-                            className="delete button">
+                            className="trash-button">
                             <i className="fa fa-trash-alt icon"></i>
                           </button>
                         </li>
                       )
                     }
                   })}
-                </ul>
+                </ol>
                 <ul>
                   <li onClick={() => formApi.addValue('directions', '')}
                       type="button"
@@ -154,7 +161,7 @@ class RecipeForm extends Component {
                 <Text field="servings" type="number" id="servings"/>
               </div>
               <div className="right">
-                {/* <button onClick={this.clearForm} className="button warning" type="button">Clear</button> */}
+                <button onClick={this.clearForm} className="button warning" type="button">Clear</button>
                 <button type="submit" className="button submit">Submit</button>
               </div>
             </form>
